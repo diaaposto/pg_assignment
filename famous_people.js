@@ -13,6 +13,10 @@ const client = new pg.Client({
 var myArgs = process.argv[2];
 // console.log(myArgs)
 
+const printNames = (result) => {
+    console.log(result); //result is an array of one obj for now
+}
+
 client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
@@ -23,7 +27,7 @@ client.connect((err) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows); //output: 1
+    printNames(result.rows); //output: 1
     client.end();
   });
 });
