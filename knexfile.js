@@ -1,12 +1,13 @@
 const settings = require('./settings.json');
+// console.log("this is settings", settings)
 
 module.exports = {
 
   development: {
     client: 'postgresql',
     connection: {
-      database: settings.my_db,
-      user:     settings.username,
+      database: settings.database,
+      user:     settings.user,
       password: settings.password,
       host: settings.hostname,
       port: settings.port,
@@ -16,9 +17,9 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: settings.database,
+      user:     settings.user,
+      password: settings.password
     },
     pool: {
       min: 2,
@@ -32,9 +33,9 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: settings.database,
+      user:     settings.user,
+      password: settings.password
     },
     pool: {
       min: 2,
@@ -45,4 +46,5 @@ module.exports = {
     }
   }
 
-};
+  }
+}
