@@ -2,7 +2,7 @@ const pg = require("pg");
 const settings = require("./settings"); // settings.json
 const config = require("./knexfile.js");
 const env = 'development';
-const knex = require('knex')(config[env])
+const knex = require('knex')(config[env]);
 
 var myArgs = process.argv[2];
 // console.log(myArgs)
